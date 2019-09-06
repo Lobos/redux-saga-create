@@ -4,6 +4,10 @@ export function sleep(duration = 300) {
   })
 }
 
+export function isInstance(instance, constructor) {
+  return Object.getPrototypeOf(instance) === constructor.prototype
+}
+
 export function beTruthy(validate) {
   return (...args) => expect(validate(...args)).toBeTruthy()
 }

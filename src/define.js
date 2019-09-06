@@ -44,12 +44,12 @@ export default (name, defaultState, options = {}) => ({
   const dispatchs = {}
   const keys = Object.keys(options)
   const ctx = {
-    types,
-    actions: {},
-    get state() {
+    $types: types,
+    $actions: {},
+    get $state() {
       return store.getState()[name]
     },
-    findState(n) {
+    $findState(n) {
       return store.getState()[n]
     },
   }
@@ -64,7 +64,8 @@ export default (name, defaultState, options = {}) => ({
     types[key] = type
     actions[key] = (...args) => ({ type, data: [...args] })
     dispatchs[key] = (...args) => store.dispatch({ type, data: [...args] })
-    ctx.actions[key] = (...args) => put({ type, data: [...args] })
+    ctx.$actions[key] = (...args) => put({ type, data: [...args] })
+    ctx[key] = (...args) => put({ type, data: [...args] })
   })
 
   ctx.$put = func => put({ type: typePut, func })

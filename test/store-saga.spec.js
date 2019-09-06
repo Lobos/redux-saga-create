@@ -24,17 +24,17 @@ const counter = define('counter', {}, {
   },
 
   *action(count) {
-    yield this.actions.put(count)
+    yield this.put(count)
   },
 
   *selectState(cb) {
     yield sleep(1)
-    cb(this.state.count)
+    cb(this.$state.count)
   },
 
   *getUser(cb) {
     yield sleep(1)
-    cb(this.findState('user').name)
+    cb(this.$findState('user').name)
   },
 
   *error() {
@@ -46,7 +46,7 @@ const counter = define('counter', {}, {
     takeLeading,
     function*() {
       yield sleep(10)
-      yield this.$set('count', this.state.count + 1)
+      yield this.$set('count', this.$state.count + 1)
     },
   ],
 })

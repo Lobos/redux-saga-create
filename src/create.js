@@ -13,7 +13,7 @@ export default (reducers, options = {}) => {
   const extendTask = (ctx, fn) =>
     function*({ data }) {
       try {
-        yield call([ctx, fn], ...data, ctx)
+        yield call([ctx, fn], ...data)
       } catch (e) {
         if (options.onError) options.onError(e)
         else throw e

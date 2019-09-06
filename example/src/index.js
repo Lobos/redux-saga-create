@@ -5,7 +5,7 @@ import { store } from './store'
 import App from './App'
 
 ReactDOM.render(
-  <StoreContext.Provider store={store}>
+  <StoreContext.Provider value={store}>
     <App />
   </StoreContext.Provider>,
   document.getElementById('root')

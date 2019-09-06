@@ -1,9 +1,9 @@
 import { define } from '../../../src'
 
 export default define('posts', {}, {
-  *fetchPosts(subreddit) {
-    const data = this.state[subreddit]
-    if (data && data.isFetching === false && !data.didInvalidate) return
+  *fetchPosts(subreddit, force) {
+    const data = this.$state[subreddit]
+    if (data && data.isFetching === false && !data.didInvalidate && !force) return
 
     yield this.$set(subreddit, {
       isFetching: true,

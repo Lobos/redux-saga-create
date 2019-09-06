@@ -29,6 +29,10 @@ describe('store[shortcut]', () => {
     state = store.getState()
     expect(state.counter.user.age).toBe(19)
 
+    ca.$set('user.friends[1]', 'mike')
+    state = store.getState()
+    expect(state.counter.user.friends[1]).toBe('mike')
+
     ca.$remove('count')
     state = store.getState()
     expect(state.counter.count).toBe(undefined)
