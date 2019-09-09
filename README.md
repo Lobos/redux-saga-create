@@ -43,7 +43,7 @@ const user = define('user', { status: 0 }, {
   }
 })
 
-// 创建 store，返回 store 对象和 actions 的集合
+// 创建 store，返回 store 对象和 dispatchs 的集合
 const { store, dispatchs } = createStore({ user })
 
 // 这里用了 redux-react-hook，用 react-redux 也是一样的
