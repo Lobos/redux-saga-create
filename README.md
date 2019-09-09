@@ -94,7 +94,7 @@ user.setInfo(name, email)
 ```
 
 ### generator 函数
-generator 函数会最为 redux-saga 函数使用
+generator 函数会作为 redux-saga 函数使用
 ```
 *login(name, pwd) => {
   let user = this.$state.user.info

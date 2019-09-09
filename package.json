@@ -12,6 +12,10 @@
     "saga",
     "creator"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lobos/redux-saga-create"
+  },
   "author": "lobos841@gmail.com",
   "license": "MIT",
   "peerDependencies": {
