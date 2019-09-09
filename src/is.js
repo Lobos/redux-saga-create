@@ -10,7 +10,8 @@ export const isNotUndef = v => v != null
 // eslint-disable-next-line
 export const isNan = a => a !== a
 export const isFunc = f => typeof f === 'function'
-export const isGenerator = f => f && f.constructor === generatorFunction.constructor
+export const isGenerator = f =>
+  f && (nameIs('GeneratorFunction')(f) || f.constructor === generatorFunction.constructor)
 export const isNumber = n => typeof n === 'number'
 export const isObject = val => val && typeof val === 'object' && !isArray(val)
 export const isString = s => typeof s === 'string'

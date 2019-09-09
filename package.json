@@ -1,10 +1,11 @@
 {
   "name": "redux-saga-create",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "react redux saga creator",
   "main": "lib/index.js",
   "scripts": {
-    "test": "jest --config jest.config.js"
+    "test": "jest --config jest.config.js",
+    "build": "babel src --out-dir publish/lib && node scripts/publish.js"
   },
   "keywords": [
     "redux",
@@ -19,7 +20,9 @@
     "redux-saga": ">=1.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.6.0",
     "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
     "@babel/polyfill": "^7.4.4",
     "@babel/preset-env": "^7.5.5",
     "babel-eslint": "10.0.2",

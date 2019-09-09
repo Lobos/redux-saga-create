@@ -16,3 +16,4 @@ gh-pages
 /*.sh
 dump.rdb
 package-lock.json
+publish/
