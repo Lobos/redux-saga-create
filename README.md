@@ -11,6 +11,14 @@ redux >= 4.0.0
 redux-saga >= 1.0.0
 ```
 
+如果项目执行时出现 "regeneratorRuntime is not defined" 的错误，在webpack配置里增加 "@babel/ployfill" 或者在babelrc里增加 "@babel/plugin-transform-runtime"
+```
+{
+  "plugins": ["@babel/plugin-transform-runtime"]
+}
+```
+
+
 ## Installing
 ```
 yarn add redux-saga-create
