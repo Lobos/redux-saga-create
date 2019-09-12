@@ -18,7 +18,7 @@ yarn add redux-saga-create
 
 ## Usage
 
-```
+``` javascript
 import React, { useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import { StoreContext, useMappedState } from 'redux-react-hook'
@@ -76,7 +76,7 @@ ReactDOM.render(
 
 ### 普通函数 (state, ...args)
 普通函数会作为 reducer 使用，用来处理 state
-```
+```  javascript
 {
   // reducer 函数用immer包装过，可以直接赋值
   setInfo: (state, name, email) => {
@@ -95,7 +95,7 @@ user.setInfo(name, email)
 
 ### generator 函数
 generator 函数会作为 redux-saga 函数使用
-```
+``` javascript
 *login(name, pwd) => {
   let user = this.$state.user.info
   if (user) return
@@ -118,7 +118,7 @@ generator 函数会作为 redux-saga 函数使用
 
 ### effect
 如果要使用 takLeading，tkeLatest 这样的 effect，可以传入数组来处理，数组第一个参数为effect，第二个参数为 generator 函数
-```
+``` javascript
 {
   login: [
     takeLeading,
@@ -133,7 +133,7 @@ generator 函数会作为 redux-saga 函数使用
 - reducers -- define 函数定义的对象集
 - options -- 额外参数
 
-```
+``` javascript
 createStore({ user }, {
   dev: bool // 是否支持 redux-devtool
   onError: func // 异常捕获
